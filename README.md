@@ -1,6 +1,6 @@
 Crypto Forensic Framework
 
-A comprehensive, systematic framework for identifying fraudulent cryptocurrency projects and exchanges through multi-layered forensic analysis.
+A systematic framework for identifying fraudulent cryptocurrency projects and exchanges through multi-layered forensic analysis.
 
 Overview
 
