@@ -114,15 +114,25 @@ Historical cases may be used to test whether the framework would have surfaced r
 
 The framework should not claim that a historical failure was predictably detectable unless the relevant evidence was actually public and available at the tested time.
 
-## Current research anchors
+## Research anchors
 
-These are methodological/regulatory reference points, not evidence that any named crypto project is compliant or non-compliant:
+These are methodological or regulatory reference points, not evidence that any named crypto project is compliant, non-compliant, solvent, fraudulent, or controlled by a particular actor.
+
+### Regulatory and standards context
 
 - FATF — **Seventh Targeted Update on Implementation of the FATF Standards on Virtual Assets/VASPs** (16 July 2026): https://www.fatf-gafi.org/en/publications/Fatfrecommendations/targeted-updated-virtualassets-vasps-2026.html
 - IOSCO — **Policy Recommendations for Crypto and Digital Asset Markets** (Final Report, 16 November 2023): https://www.iosco.org/library/pubdocs/pdf/IOSCOPD747.pdf
 - U.S. Treasury / OFAC — **Sanctions Compliance Guidance for the Virtual Currency Industry** (15 October 2021, U.S.-specific): https://ofac.treasury.gov/recent-actions/20211015
 
 FATF and IOSCO materials provide international standards/recommendations; they are not substitutes for the current law or regulator record of the jurisdiction being investigated. OFAC guidance is U.S.-specific.
+
+### Technical research context
+
+- Meiklejohn S, Pomarole M, Jordan G, et al. **A Fistful of Bitcoins: Characterizing Payments Among Men with No Names**. IMC 2013. DOI: https://doi.org/10.1145/2504730.2504747 — foundational work showing how transaction-graph heuristics can support address clustering while remaining heuristic rather than proof of real-world identity.
+- Dagher GG, Buenz B, Bonneau J, Clark J, Boneh D. **Provisions: Privacy-preserving proofs of solvency for Bitcoin exchanges** (2015): https://eprint.iacr.org/2015/1008 — a proof-of-solvency approach that explicitly treats reserves and customer liabilities as part of the solvency question.
+- Lazirko M, Appelbaum D, Vasarhelyi M. **Proof of reserves: a double-helix framework**. *The British Accounting Review* (2025). DOI: https://doi.org/10.1016/j.bar.2025.101730 — recent work emphasizing the incompleteness of reserve-only verification and the need to connect on-chain and off-chain obligations.
+
+These papers support methodological questions; they do not validate a particular wallet attribution, exchange solvency claim, or fraud allegation without target-specific evidence.
 
 ## Limitations
 
