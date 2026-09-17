@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://joenasriani.github.io/crypto-forensic-framework/sitemap.xml
