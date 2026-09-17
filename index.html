@@ -27,7 +27,10 @@
     "citation":[
       "https://www.fatf-gafi.org/en/publications/Fatfrecommendations/targeted-updated-virtualassets-vasps-2026.html",
       "https://www.iosco.org/library/pubdocs/pdf/IOSCOPD747.pdf",
-      "https://ofac.treasury.gov/recent-actions/20211015"
+      "https://ofac.treasury.gov/recent-actions/20211015",
+      "https://doi.org/10.1145/2504730.2504747",
+      "https://eprint.iacr.org/2015/1008",
+      "https://doi.org/10.1016/j.bar.2025.101730"
     ]
   }
   </script>
@@ -125,13 +128,25 @@
   <section>
     <h2>07 / Anchors</h2>
     <div>
-      <p>These sources anchor methodology and regulatory context. They do not establish that any named project is compliant or non-compliant.</p>
-      <ul>
-        <li><a href="https://www.fatf-gafi.org/en/publications/Fatfrecommendations/targeted-updated-virtualassets-vasps-2026.html"><strong>FATF — Seventh Targeted Update on Implementation of the FATF Standards on Virtual Assets/VASPs</strong></a>, 16 July 2026.</li>
-        <li><a href="https://www.iosco.org/library/pubdocs/pdf/IOSCOPD747.pdf"><strong>IOSCO — Policy Recommendations for Crypto and Digital Asset Markets</strong></a>, Final Report, 16 November 2023.</li>
-        <li><a href="https://ofac.treasury.gov/recent-actions/20211015"><strong>U.S. Treasury / OFAC — Sanctions Compliance Guidance for the Virtual Currency Industry</strong></a>, 15 October 2021. U.S.-specific.</li>
-      </ul>
-      <p>FATF and IOSCO materials are international standards/recommendations, not substitutes for current national law. Regulatory status must be checked against the applicable jurisdiction's current official records.</p>
+      <p>These sources anchor methodology and regulatory context. They do not establish that any named project is compliant, non-compliant, solvent, fraudulent or controlled by a particular actor.</p>
+      <div class="block">
+        <h3>Regulatory and standards context</h3>
+        <ul>
+          <li><a href="https://www.fatf-gafi.org/en/publications/Fatfrecommendations/targeted-updated-virtualassets-vasps-2026.html"><strong>FATF — Seventh Targeted Update on Implementation of the FATF Standards on Virtual Assets/VASPs</strong></a>, 16 July 2026.</li>
+          <li><a href="https://www.iosco.org/library/pubdocs/pdf/IOSCOPD747.pdf"><strong>IOSCO — Policy Recommendations for Crypto and Digital Asset Markets</strong></a>, Final Report, 16 November 2023.</li>
+          <li><a href="https://ofac.treasury.gov/recent-actions/20211015"><strong>U.S. Treasury / OFAC — Sanctions Compliance Guidance for the Virtual Currency Industry</strong></a>, 15 October 2021. U.S.-specific.</li>
+        </ul>
+        <p>FATF and IOSCO materials are international standards/recommendations, not substitutes for current national law. Regulatory status must be checked against the applicable jurisdiction's current official records.</p>
+      </div>
+      <div class="block">
+        <h3>Technical research context</h3>
+        <ul>
+          <li><a href="https://doi.org/10.1145/2504730.2504747"><strong>Meiklejohn et al. — A Fistful of Bitcoins: Characterizing Payments Among Men with No Names</strong></a>, IMC 2013. Foundational work on transaction-graph heuristics and address clustering; heuristics are not proof of real-world identity.</li>
+          <li><a href="https://eprint.iacr.org/2015/1008"><strong>Dagher et al. — Provisions: Privacy-preserving proofs of solvency for Bitcoin exchanges</strong></a>, 2015. Treats both reserves and customer liabilities as part of the solvency question.</li>
+          <li><a href="https://doi.org/10.1016/j.bar.2025.101730"><strong>Lazirko, Appelbaum &amp; Vasarhelyi — Proof of reserves: a double-helix framework</strong></a>, 2025. Examines limitations of reserve-only verification and the need to connect on-chain and off-chain obligations.</li>
+        </ul>
+        <p>These papers support methodological questions; they do not validate a specific wallet attribution, exchange solvency claim or fraud allegation without target-specific evidence.</p>
+      </div>
     </div>
   </section>
 
