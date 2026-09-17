@@ -3,177 +3,146 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Joe Nasr's static crypto due diligence reference for organizing open-source checks across identity, contracts, assets, on-chain activity, infrastructure, and public claims.">
   <title>Crypto Due Diligence Framework | Joe Nasr</title>
+  <meta name="description" content="Independent research framework by Joe Nasr for reproducible open-source due diligence on cryptocurrency projects, exchanges, tokens and DeFi protocols.">
+  <meta name="author" content="Joe Nasr">
+  <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
+  <link rel="canonical" href="https://joenasriani.github.io/crypto-forensic-framework/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Crypto Due Diligence Framework">
+  <meta property="og:description" content="Research methodology for evidence-bounded crypto due diligence: source hierarchy, reproducibility, attribution limits, alternative explanations and falsifiers.">
+  <meta property="og:url" content="https://joenasriani.github.io/crypto-forensic-framework/">
+  <meta name="twitter:card" content="summary">
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Article",
+    "headline":"Crypto Due Diligence Framework",
+    "description":"Independent research framework for reproducible open-source due diligence on cryptocurrency projects, exchanges, tokens and DeFi protocols.",
+    "url":"https://joenasriani.github.io/crypto-forensic-framework/",
+    "dateModified":"2026-09-17",
+    "inLanguage":"en",
+    "author":{"@type":"Person","name":"Joe Nasr","url":"https://linktr.ee/joenasr/"},
+    "about":["cryptocurrency","due diligence","blockchain forensics","open-source intelligence","smart contracts","on-chain analysis","digital assets"],
+    "citation":[
+      "https://www.fatf-gafi.org/en/publications/Fatfrecommendations/targeted-updated-virtualassets-vasps-2026.html",
+      "https://www.iosco.org/library/pubdocs/pdf/IOSCOPD747.pdf",
+      "https://ofac.treasury.gov/recent-actions/20211015"
+    ]
+  }
+  </script>
   <style>
-    :root {
-      --paper: #f4f1e9;
-      --ink: #171717;
-      --muted: #68645d;
-      --rule: #c8c1b5;
-      --mark: #9d2d22;
-      --mono: "Courier New", Courier, monospace;
-      --sans: Arial, Helvetica, sans-serif;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      background: var(--paper);
-      color: var(--ink);
-      font-family: var(--sans);
-      line-height: 1.55;
-    }
-    main { max-width: 980px; margin: 0 auto; padding: 48px 28px 80px; }
-    header { border-top: 8px solid var(--ink); padding-top: 24px; margin-bottom: 52px; }
-    .kicker, .meta, .status { font-family: var(--mono); text-transform: uppercase; letter-spacing: .08em; }
-    .kicker { font-size: .73rem; color: var(--mark); margin-bottom: 12px; }
-    h1 { margin: 0; font-size: clamp(2.3rem, 7vw, 5.2rem); line-height: .95; font-weight: 800; max-width: 820px; }
-    .meta { margin-top: 20px; color: var(--muted); font-size: .72rem; }
-    .lead { font-size: 1.25rem; max-width: 760px; margin: 36px 0 0; }
-    section { display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: 34px; padding: 30px 0; border-top: 1px solid var(--rule); }
-    section:last-of-type { border-bottom: 1px solid var(--rule); }
-    h2 { margin: 0; font-family: var(--mono); font-size: .78rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); }
-    h3 { font-size: 1.05rem; margin: 0 0 8px; }
-    p { margin: 0 0 14px; }
-    ul, ol { margin: 0; padding-left: 20px; }
-    li { margin: 0 0 10px; }
-    .block + .block { margin-top: 26px; }
-    .question { font-family: var(--mono); font-size: .82rem; color: var(--mark); margin-bottom: 8px; }
-    .boundary { margin-top: 42px; border-left: 5px solid var(--mark); padding: 4px 0 4px 20px; max-width: 790px; }
-    .boundary strong { display: block; font-family: var(--mono); font-size: .78rem; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 8px; }
-    footer { margin-top: 42px; font-family: var(--mono); color: var(--muted); font-size: .72rem; line-height: 1.7; }
-    a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
-    @media (max-width: 700px) {
-      main { padding: 30px 20px 60px; }
-      section { grid-template-columns: 1fr; gap: 12px; }
-      h1 { font-size: 3rem; }
-    }
+    :root{--paper:#f4f1e9;--ink:#171717;--muted:#68645d;--rule:#c8c1b5;--mark:#9d2d22;--soft:#ebe6db;--mono:"Courier New",Courier,monospace;--sans:Arial,Helvetica,sans-serif}
+    *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.58}main{max-width:1020px;margin:0 auto;padding:48px 28px 80px}header{border-top:8px solid var(--ink);padding-top:24px;margin-bottom:50px}.kicker,.meta,.status{font-family:var(--mono);text-transform:uppercase;letter-spacing:.08em}.kicker{font-size:.73rem;color:var(--mark);margin-bottom:12px}h1{margin:0;font-size:clamp(2.3rem,7vw,5.2rem);line-height:.95;font-weight:800;max-width:840px}.meta{margin-top:20px;color:var(--muted);font-size:.72rem}.lead{font-size:1.22rem;max-width:800px;margin:34px 0 0}section{display:grid;grid-template-columns:185px minmax(0,1fr);gap:34px;padding:30px 0;border-top:1px solid var(--rule)}section:last-of-type{border-bottom:1px solid var(--rule)}h2{margin:0;font-family:var(--mono);font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}h3{font-size:1.03rem;margin:0 0 8px}p{margin:0 0 14px}ul,ol{margin:0;padding-left:20px}li{margin:0 0 10px}.block+.block{margin-top:26px}.question{font-family:var(--mono);font-size:.82rem;color:var(--mark);margin-bottom:8px}.boundary{margin-top:42px;border-left:5px solid var(--mark);padding:4px 0 4px 20px;max-width:820px}.boundary strong{display:block;font-family:var(--mono);font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px}table{width:100%;border-collapse:collapse;font-size:.9rem}th,td{text-align:left;vertical-align:top;padding:10px;border-bottom:1px solid var(--rule)}th{background:var(--soft)}code{font-family:var(--mono);font-size:.9em}a{color:inherit;text-decoration-thickness:1px;text-underline-offset:3px}footer{margin-top:42px;font-family:var(--mono);color:var(--muted);font-size:.72rem;line-height:1.7}@media(max-width:700px){main{padding:30px 20px 60px}section{grid-template-columns:1fr;gap:12px}h1{font-size:3rem}table{font-size:.82rem}}
   </style>
 </head>
 <body>
 <main>
   <header>
-    <div class="kicker">Static research note / open-source due diligence</div>
+    <div class="kicker">Independent research framework · open-source crypto due diligence</div>
     <h1>Crypto Due Diligence Framework</h1>
-    <div class="meta">Joe Nasr · Joenasriani · checklist reference, not an automated scanner</div>
-    <p class="lead">A structured way to decide what needs verification before trusting a cryptocurrency project, exchange, token, or DeFi protocol. The framework organizes evidence questions; it does not determine that an entity is legitimate or fraudulent.</p>
+    <div class="meta">Joe Nasr · evidence method · updated 17 September 2026</div>
+    <p class="lead">A reproducible method for testing claims about cryptocurrency projects, exchanges, tokens and DeFi protocols using public evidence—without converting warning signals into unsupported accusations.</p>
   </header>
 
   <section>
-    <h2>01 / Identity</h2>
+    <h2>01 / Question</h2>
     <div>
-      <div class="block">
-        <div class="question">What entity is actually responsible?</div>
-        <ul>
-          <li>Identify the legal entity, jurisdiction, directors, controlling persons, and public business records where available.</li>
-          <li>Verify regulatory claims directly in the relevant regulator's official register rather than relying on logos or marketing text.</li>
-          <li>Compare team biographies, employment claims, addresses, and company history against independent records.</li>
-        </ul>
-      </div>
-      <div class="block">
-        <div class="question">What would count as a problem?</div>
-        <p>Contradictory identities, unverifiable licenses, false affiliations, or unexplained changes are reasons for further investigation. None of those signals alone proves fraud.</p>
-      </div>
+      <div class="question">What is this research trying to solve?</div>
+      <p>How can public evidence from legal-entity records, deployed code, smart contracts, on-chain activity, infrastructure, market data and public claims be organized into a defensible due-diligence process?</p>
+      <p><strong>Core rule:</strong> a red flag is not proof of fraud, and the absence of a red flag is not proof of legitimacy.</p>
     </div>
   </section>
 
   <section>
-    <h2>02 / Code</h2>
+    <h2>02 / Method</h2>
     <div>
-      <div class="block">
-        <div class="question">What can the software actually do?</div>
-        <ul>
-          <li>Locate verified contract addresses and compare them with the addresses published by the project.</li>
-          <li>Inspect privileged functions such as minting, pausing, upgrades, blacklisting, ownership transfer, fee changes, and withdrawal controls.</li>
-          <li>Read published audit reports themselves. Confirm scope, version, date, unresolved findings, and whether deployed code matches the audited code.</li>
-        </ul>
-      </div>
-      <div class="block">
-        <p>Automated scanners can identify patterns worth inspection, but a scanner result should not be treated as a complete smart-contract audit.</p>
-      </div>
+      <ol>
+        <li><strong>Define the target.</strong> Exact entity, token, contract, exchange, domain, wallet or claim.</li>
+        <li><strong>Fix jurisdiction and date.</strong> Regulatory conclusions are jurisdiction- and time-specific.</li>
+        <li><strong>State the claim under test.</strong> Begin with a proposition, not a verdict.</li>
+        <li><strong>Collect primary evidence first.</strong> Chain records, deployed code, official registries, filings, court/enforcement records and first-party technical material.</li>
+        <li><strong>Record provenance.</strong> URL, identifier, contract, transaction hash, block, timestamp, archive date, version or commit.</li>
+        <li><strong>Corroborate independently.</strong> Source agreement is not the same as source independence.</li>
+        <li><strong>Separate observation from inference.</strong> Interaction is not ownership; concentration is not manipulation; anonymity is not criminality.</li>
+        <li><strong>Test alternatives.</strong> Preserve plausible benign explanations and contradictory evidence.</li>
+        <li><strong>Bound confidence.</strong> Confidence applies to the specific claim, not the whole project.</li>
+        <li><strong>State falsifiers and unknowns.</strong> Record what would weaken, overturn or leave the conclusion unresolved.</li>
+      </ol>
     </div>
   </section>
 
   <section>
-    <h2>03 / Assets</h2>
+    <h2>03 / Sources</h2>
     <div>
-      <div class="block">
-        <div class="question">Who controls the money and supply?</div>
-        <ul>
-          <li>Inspect token distribution, vesting, treasury control, liquidity ownership, multisig configuration, and concentration among large holders.</li>
-          <li>For custodial services, distinguish a public proof-of-reserves claim from evidence about liabilities, ownership, and controls.</li>
-          <li>Verify lock periods and liquidity claims on-chain rather than relying on screenshots.</li>
-        </ul>
-      </div>
+      <div class="block"><h3>Tier 1 — Primary records</h3><p>Blockchain transactions and contract state; verified deployed code; official corporate, regulator, sanctions, court and enforcement records; project-controlled repositories, governance records and first-party disclosures.</p></div>
+      <div class="block"><h3>Tier 2 — Direct technical evidence</h3><p>Reproducible contract analysis; audit reports whose scope/version match deployed code; archived sites; release histories; DNS, certificate, package and repository metadata obtained lawfully from public sources.</p></div>
+      <div class="block"><h3>Tier 3 — Independent analysis</h3><p>Peer-reviewed research, established blockchain/market analytics and reputable investigative reporting with transparent sourcing. Third-party wallet labels, clustering outputs and risk scores remain analytical claims until independently supported.</p></div>
+      <div class="block"><h3>Tier 4 — Promotional and social signals</h3><p>Marketing, testimonials, influencers, follower counts and engagement patterns can generate questions but should not independently establish legitimacy, fraud, ownership or coordination.</p></div>
     </div>
   </section>
 
   <section>
-    <h2>04 / Chain</h2>
+    <h2>04 / Dimensions</h2>
     <div>
-      <div class="block">
-        <div class="question">Does transaction behavior match the public story?</div>
-        <ul>
-          <li>Trace large transfers, related wallets, funding origins, repeated circular flows, contract interactions, and sudden changes in holder concentration.</li>
-          <li>Separate observations from attribution. Two wallets interacting does not by itself prove common ownership or malicious coordination.</li>
-          <li>Record transaction hashes, block numbers, timestamps, and the chain used so findings remain reproducible.</li>
-        </ul>
-      </div>
+      <div class="block"><h3>Entity identity and regulatory claims</h3><p>Legal entity, jurisdiction, controlling persons, registrations, licenses and affiliations. Verify against the relevant official register for the jurisdiction and date.</p></div>
+      <div class="block"><h3>Code and smart contracts</h3><p>Contract identity, upgradeability, privileged functions, minting, pausing, blacklisting, fees, custody and withdrawal controls. An automated scanner is triage—not a complete audit.</p></div>
+      <div class="block"><h3>Assets and control</h3><p>Supply, vesting, treasury, liquidity, multisig configuration, holder concentration, custody and liabilities. A proof-of-reserves claim does not by itself establish liabilities or solvency.</p></div>
+      <div class="block"><h3>On-chain behavior</h3><p>Transaction flows, funding origins, related-wallet hypotheses, circular flows, concentration changes and governance activity. Wallet interaction does not by itself prove common ownership or malicious coordination.</p></div>
+      <div class="block"><h3>Infrastructure and history</h3><p>Domains, archived pages, repositories, releases, package metadata and public documents. A privacy service, CDN, template or young domain is context—not a verdict.</p></div>
+      <div class="block"><h3>Public and market claims</h3><p>Partnerships, audits, certifications, customer or volume claims, rankings, returns and promotional statements. Verify material claims at the claimed partner, auditor, regulator or primary source.</p></div>
     </div>
   </section>
 
   <section>
-    <h2>05 / Infrastructure</h2>
+    <h2>05 / Record</h2>
     <div>
-      <div class="block">
-        <div class="question">Does the technical footprint support the claimed history?</div>
-        <ul>
-          <li>Compare domain registration history, archived pages, public repositories, release history, package metadata, and published documentation.</li>
-          <li>Look for contradictions between launch dates, claimed development history, repositories, contracts, and archived marketing material.</li>
-          <li>Do not treat use of a CDN, privacy service, template, or young domain as proof of wrongdoing. They are context, not verdicts.</li>
-        </ul>
-      </div>
+      <table>
+        <thead><tr><th>Field</th><th>Research record</th></tr></thead>
+        <tbody>
+          <tr><td>Claim under test</td><td>Exact proposition being evaluated</td></tr>
+          <tr><td>Observation</td><td>What the source directly shows</td></tr>
+          <tr><td>Source / provenance</td><td>URL, registry ID, contract, transaction, block, archive or commit</td></tr>
+          <tr><td>Interpretation</td><td>Inference drawn from the observation</td></tr>
+          <tr><td>Alternative explanation</td><td>Competing interpretation supported by available facts</td></tr>
+          <tr><td>Confidence</td><td>High / medium / low, scoped only to this claim</td></tr>
+          <tr><td>Falsifier</td><td>Evidence that would materially weaken the inference</td></tr>
+          <tr><td>Status</td><td>Verified / supported inference / unresolved / rejected</td></tr>
+        </tbody>
+      </table>
     </div>
   </section>
 
   <section>
-    <h2>06 / Claims</h2>
+    <h2>06 / Cases</h2>
     <div>
-      <div class="block">
-        <div class="question">Which promotional statements can be independently checked?</div>
-        <ul>
-          <li>Verify partnerships through the claimed partner's own channels.</li>
-          <li>Check quotations, customer counts, rankings, return claims, audits, certifications, and institutional affiliations against primary sources.</li>
-          <li>Treat follower counts, engagement spikes, testimonials, and influencer promotion as signals requiring context rather than evidence of legitimacy.</li>
-        </ul>
-      </div>
+      <div class="question">How should historical failures be used?</div>
+      <p>Case studies should test whether the framework would have surfaced relevant evidence <strong>without hindsight leakage</strong>. Separate information publicly available before an event from evidence disclosed only after collapse, enforcement, litigation or investigation.</p>
+      <p>A useful case study also tests false positives: if the same warning rule is common among legitimate projects, it is a weak discriminator and should not be presented as predictive evidence.</p>
     </div>
   </section>
 
   <section>
-    <h2>07 / Record</h2>
+    <h2>07 / Anchors</h2>
     <div>
-      <div class="block">
-        <div class="question">Can another reviewer reproduce the finding?</div>
-        <ol>
-          <li>Record the exact claim being tested.</li>
-          <li>Save the source URL, date, identifier, contract address, or transaction hash.</li>
-          <li>Separate observation, inference, and allegation.</li>
-          <li>Record alternative explanations.</li>
-          <li>State what remains unknown.</li>
-        </ol>
-      </div>
+      <p>These sources anchor methodology and regulatory context. They do not establish that any named project is compliant or non-compliant.</p>
+      <ul>
+        <li><a href="https://www.fatf-gafi.org/en/publications/Fatfrecommendations/targeted-updated-virtualassets-vasps-2026.html"><strong>FATF — Seventh Targeted Update on Implementation of the FATF Standards on Virtual Assets/VASPs</strong></a>, 16 July 2026.</li>
+        <li><a href="https://www.iosco.org/library/pubdocs/pdf/IOSCOPD747.pdf"><strong>IOSCO — Policy Recommendations for Crypto and Digital Asset Markets</strong></a>, Final Report, 16 November 2023.</li>
+        <li><a href="https://ofac.treasury.gov/recent-actions/20211015"><strong>U.S. Treasury / OFAC — Sanctions Compliance Guidance for the Virtual Currency Industry</strong></a>, 15 October 2021. U.S.-specific.</li>
+      </ul>
+      <p>FATF and IOSCO materials are international standards/recommendations, not substitutes for current national law. Regulatory status must be checked against the applicable jurisdiction's current official records.</p>
     </div>
   </section>
 
   <div class="boundary">
     <strong>Evidence boundary</strong>
-    This page is a static due-diligence reference. It does not run blockchain surveillance, wallet clustering, fraud detection, smart-contract auditing, live alerts, identity verification, or incident response. A red flag is not proof of fraud, and an apparently clean review is not proof of safety. Financial, legal, regulatory, and security decisions require current primary evidence and appropriate qualified review.
+    This research framework does not run blockchain surveillance, wallet clustering, fraud detection, smart-contract auditing, live alerts, identity verification or incident response. It is not financial advice, legal advice, a regulatory determination or a forensic certification. Pattern matching alone does not establish criminal intent, beneficial ownership, insolvency, market manipulation, sanctions exposure or fraud.
   </div>
 
   <footer>
-    Joe Nasr / Joenasriani<br>
-    Identity: <a href="https://joe-nasr-signals.vercel.app/v2/">joe-nasr-signals.vercel.app/v2/</a><br>
+    Joe Nasr · research audit updated 17 September 2026<br>
+    Identity: <a href="https://linktr.ee/joenasr/">linktr.ee/joenasr</a><br>
     Repository: <a href="https://github.com/Joenasriani/crypto-forensic-framework">github.com/Joenasriani/crypto-forensic-framework</a>
   </footer>
 </main>
