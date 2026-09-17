@@ -1,7 +1,7 @@
 # Crypto Due Diligence Framework
 
 **Author:** Joe Nasr  
-**Identity:** https://joe-nasr-signals.vercel.app/v2/
+**Identity:** https://linktr.ee/joenasr/
 
 A static reference for organizing open-source due diligence on cryptocurrency projects, exchanges, tokens, and DeFi protocols.
 
