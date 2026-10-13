@@ -32,34 +32,34 @@ No attribution of ownership, coordination, fraud, insolvency, manipulation, sanc
 
 For each investigated claim or entity:
 
-1. **Define the target** — exact entity, token, contract, exchange, domain, wallet, or public claim.
-2. **Fix the jurisdiction and date** — legal and regulatory conclusions are jurisdiction- and time-specific.
-3. **State the claim being tested** — do not begin with a verdict.
-4. **Collect primary evidence first** — deployed contracts, transaction records, official registries, court or enforcement records, corporate filings, signed/public technical documents, and first-party statements.
-5. **Record provenance** — URL, registry identifier, contract address, chain, transaction hash, block number, timestamp, archive date, document version, or commit where applicable.
-6. **Corroborate independently** — distinguish source agreement from source independence.
-7. **Separate observation from interpretation** — wallet interaction does not prove common ownership; concentration does not prove manipulation; a young domain does not prove fraud.
-8. **Test alternatives** — record plausible non-malicious explanations and contradictory evidence.
-9. **Assign bounded confidence** — confidence applies to the specific claim, not to the project as a whole.
-10. **State falsifiers and unknowns** — identify what evidence would weaken, overturn, or leave the conclusion unresolved.
+1. **Define the target**  –  exact entity, token, contract, exchange, domain, wallet, or public claim.
+2. **Fix the jurisdiction and date**  –  legal and regulatory conclusions are jurisdiction- and time-specific.
+3. **State the claim being tested**  –  do not begin with a verdict.
+4. **Collect primary evidence first**  –  deployed contracts, transaction records, official registries, court or enforcement records, corporate filings, signed/public technical documents, and first-party statements.
+5. **Record provenance**  –  URL, registry identifier, contract address, chain, transaction hash, block number, timestamp, archive date, document version, or commit where applicable.
+6. **Corroborate independently**  –  distinguish source agreement from source independence.
+7. **Separate observation from interpretation**  –  wallet interaction does not prove common ownership; concentration does not prove manipulation; a young domain does not prove fraud.
+8. **Test alternatives**  –  record plausible non-malicious explanations and contradictory evidence.
+9. **Assign bounded confidence**  –  confidence applies to the specific claim, not to the project as a whole.
+10. **State falsifiers and unknowns**  –  identify what evidence would weaken, overturn, or leave the conclusion unresolved.
 
 ## Source hierarchy
 
-### Tier 1 — Primary records
+### Tier 1  –  Primary records
 
 - blockchain transactions, blocks, verified deployed bytecode and contract state
 - official corporate and beneficial-ownership records where lawfully public
 - official regulator registers, enforcement notices, sanctions lists, court records, and government publications
 - project-controlled repositories, signed releases, technical documentation, governance records, and first-party disclosures
 
-### Tier 2 — Direct technical evidence
+### Tier 2  –  Direct technical evidence
 
 - reproducible contract analysis
 - public audit reports with scope/version/date verified against deployed code
 - archived websites and release histories
 - DNS, certificate, package, repository, and infrastructure metadata obtained lawfully from public sources
 
-### Tier 3 — Independent analysis
+### Tier 3  –  Independent analysis
 
 - peer-reviewed research
 - established market or blockchain analytics providers
@@ -67,7 +67,7 @@ For each investigated claim or entity:
 
 Third-party wallet labels, risk scores, clustering outputs, exchange ratings, and scanner warnings remain **claims or analytical outputs** until independently supported.
 
-### Tier 4 — Promotional / social signals
+### Tier 4  –  Promotional / social signals
 
 - marketing pages
 - testimonials
@@ -79,12 +79,12 @@ These can generate questions but should not independently establish legitimacy, 
 
 ## Analytical dimensions
 
-1. **Entity identity and regulatory claims** — legal entity, jurisdiction, controlling persons, licenses, registrations, affiliations.
-2. **Smart-contract and code review** — contract identity, upgradeability, privileged functions, minting, pausing, blacklisting, fee changes, custody and withdrawal controls.
-3. **Token, liquidity, and asset-control structure** — supply, vesting, treasury, liquidity control, multisig configuration, concentration, custody and liabilities.
-4. **On-chain behavior** — transaction flows, funding origins, related-wallet hypotheses, circular flows, concentration changes, governance activity.
-5. **Infrastructure and history** — domains, archived pages, repositories, release chronology, package metadata, public documentation.
-6. **Public and market claims** — partnerships, audits, certifications, customer/volume claims, rankings, returns, promotional statements and social amplification.
+1. **Entity identity and regulatory claims**  –  legal entity, jurisdiction, controlling persons, licenses, registrations, affiliations.
+2. **Smart-contract and code review**  –  contract identity, upgradeability, privileged functions, minting, pausing, blacklisting, fee changes, custody and withdrawal controls.
+3. **Token, liquidity, and asset-control structure**  –  supply, vesting, treasury, liquidity control, multisig configuration, concentration, custody and liabilities.
+4. **On-chain behavior**  –  transaction flows, funding origins, related-wallet hypotheses, circular flows, concentration changes, governance activity.
+5. **Infrastructure and history**  –  domains, archived pages, repositories, release chronology, package metadata, public documentation.
+6. **Public and market claims**  –  partnerships, audits, certifications, customer/volume claims, rankings, returns, promotional statements and social amplification.
 
 ## Evidence record
 
@@ -121,17 +121,17 @@ These are methodological or regulatory reference points, not evidence that any n
 
 ### Regulatory and standards context
 
-- FATF — **Seventh Targeted Update on Implementation of the FATF Standards on Virtual Assets/VASPs** (16 July 2026): https://www.fatf-gafi.org/en/publications/Fatfrecommendations/targeted-updated-virtualassets-vasps-2026.html
-- IOSCO — **Policy Recommendations for Crypto and Digital Asset Markets** (Final Report, 16 November 2023): https://www.iosco.org/library/pubdocs/pdf/IOSCOPD747.pdf
-- U.S. Treasury / OFAC — **Sanctions Compliance Guidance for the Virtual Currency Industry** (15 October 2021, U.S.-specific): https://ofac.treasury.gov/recent-actions/20211015
+- FATF  –  **Seventh Targeted Update on Implementation of the FATF Standards on Virtual Assets/VASPs** (16 July 2026): https://www.fatf-gafi.org/en/publications/Fatfrecommendations/targeted-updated-virtualassets-vasps-2026.html
+- IOSCO  –  **Policy Recommendations for Crypto and Digital Asset Markets** (Final Report, 16 November 2023): https://www.iosco.org/library/pubdocs/pdf/IOSCOPD747.pdf
+- U.S. Treasury / OFAC  –  **Sanctions Compliance Guidance for the Virtual Currency Industry** (15 October 2021, U.S.-specific): https://ofac.treasury.gov/recent-actions/20211015
 
 FATF and IOSCO materials provide international standards/recommendations; they are not substitutes for the current law or regulator record of the jurisdiction being investigated. OFAC guidance is U.S.-specific.
 
 ### Technical research context
 
-- Meiklejohn S, Pomarole M, Jordan G, et al. **A Fistful of Bitcoins: Characterizing Payments Among Men with No Names**. IMC 2013. DOI: https://doi.org/10.1145/2504730.2504747 — foundational work showing how transaction-graph heuristics can support address clustering while remaining heuristic rather than proof of real-world identity.
-- Dagher GG, Buenz B, Bonneau J, Clark J, Boneh D. **Provisions: Privacy-preserving proofs of solvency for Bitcoin exchanges** (2015): https://eprint.iacr.org/2015/1008 — a proof-of-solvency approach that explicitly treats reserves and customer liabilities as part of the solvency question.
-- Lazirko M, Appelbaum D, Vasarhelyi M. **Proof of reserves: a double-helix framework**. *The British Accounting Review* (2025). DOI: https://doi.org/10.1016/j.bar.2025.101730 — recent work emphasizing the incompleteness of reserve-only verification and the need to connect on-chain and off-chain obligations.
+- Meiklejohn S, Pomarole M, Jordan G, et al. **A Fistful of Bitcoins: Characterizing Payments Among Men with No Names**. IMC 2013. DOI: https://doi.org/10.1145/2504730.2504747  –  foundational work showing how transaction-graph heuristics can support address clustering while remaining heuristic rather than proof of real-world identity.
+- Dagher GG, Buenz B, Bonneau J, Clark J, Boneh D. **Provisions: Privacy-preserving proofs of solvency for Bitcoin exchanges** (2015): https://eprint.iacr.org/2015/1008  –  a proof-of-solvency approach that explicitly treats reserves and customer liabilities as part of the solvency question.
+- Lazirko M, Appelbaum D, Vasarhelyi M. **Proof of reserves: a double-helix framework**. *The British Accounting Review* (2025). DOI: https://doi.org/10.1016/j.bar.2025.101730  –  recent work emphasizing the incompleteness of reserve-only verification and the need to connect on-chain and off-chain obligations.
 
 These papers support methodological questions; they do not validate a particular wallet attribution, exchange solvency claim, or fraud allegation without target-specific evidence.
 
