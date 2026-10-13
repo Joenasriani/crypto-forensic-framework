@@ -1,5 +1,7 @@
 # Crypto Due Diligence Framework
 
+**First published:** 2023  
+
 **Identity:** https://linktr.ee/joenasr/  
 **Live page:** https://joenasriani.github.io/crypto-forensic-framework/
 
