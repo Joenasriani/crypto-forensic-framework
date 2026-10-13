@@ -1,6 +1,5 @@
 # Crypto Due Diligence Framework
 
-**Author:** Joe Nasr  
 **Identity:** https://linktr.ee/joenasr/  
 **Live page:** https://joenasriani.github.io/crypto-forensic-framework/
 
@@ -143,3 +142,5 @@ Public-source availability varies by jurisdiction and chain. Wallet attribution 
 **Research audit updated:** 17 September 2026.
 
 Repository: https://github.com/Joenasriani/crypto-forensic-framework
+
+Credit: Joe Nasr
